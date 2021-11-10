@@ -1,0 +1,77 @@
+1. Download a dataset from kaggle and upload it in google colab or jupyter notebook. Perform any random operation on the dataset
+In [2]:
+import pandas as pd
+x = pd.read_csv("iris.csv")
+x
+Out[2]:
+sepal.length	sepal.width	petal.length	petal.width	variety
+0	5.1	3.5	1.4	0.2	Setosa
+1	4.9	3.0	1.4	0.2	Setosa
+2	4.7	3.2	1.3	0.2	Setosa
+3	4.6	3.1	1.5	0.2	Setosa
+4	5.0	3.6	1.4	0.2	Setosa
+...	...	...	...	...	...
+145	6.7	3.0	5.2	2.3	Virginica
+146	6.3	2.5	5.0	1.9	Virginica
+147	6.5	3.0	5.2	2.0	Virginica
+148	6.2	3.4	5.4	2.3	Virginica
+149	5.9	3.0	5.1	1.8	Virginica
+150 rows × 5 columns
+
+2. Defining three random arrays: a one d array(x1), 2d array(x2),and 3d array(x3).Numpy as random number generator , which we willseed with a set value in order to ensure to this code issue.Display the ndim, shape and size of the third array(x3)
+In [3]:
+import numpy as np
+np.random.seed(0)
+x1 = np.random.randint(10,size=3)
+x2 = np.random.randint(10,size = (3,4))
+x3 = np.random.randint(10,size=(3,4,5))
+In [4]:
+print("x3 ndim: ",x3.ndim)
+print("x3 shape: ",x3.shape)
+print("x3 size: ",x3.size)
+x3 ndim:  3
+x3 shape:  (3, 4, 5)
+x3 size:  60
+3. create two numpy array named x and y at integers using range (1 to 10) and (11 to 20) command. Next create a new array 2 by concatenating x and y.
+In [5]:
+x = np.arange(1,10,dtype = int)
+y = np.arange(11,20,dtype = int)
+z = np.concatenate((x,y))
+z
+Out[5]:
+array([ 1,  2,  3,  4,  5,  6,  7,  8,  9, 11, 12, 13, 14, 15, 16, 17, 18,
+       19])
+4. Define a 2 dimensional array named x of integers using range(1-10) command.Next perform x+5,x-5,x/5,x^2,x%2,log(x),log2)(x),log10(x) operation over x.Compute some trignometric functions(sin,cos,tan) on x.
+In [6]:
+import numpy as np
+x = np.arange(1,10,dtype = int)
+print("x+5: ",x+5)
+print("x-5: ",x-5)
+print("x/5: ",x/5)
+print("x*5",x*5)
+print("x^2: ",np.power(x,2))
+print("x%2: ",np.mod(x,2))
+print("log(x): ",np.log(x))
+print("log2(x): ",np.log2(x))
+print("log10(x): ",np.log10(x))
+print("sin: ",np.sin(x))
+print("cos: ",np.cos(x))
+print("tan: ",np.tan(x))
+x+5:  [ 6  7  8  9 10 11 12 13 14]
+x-5:  [-4 -3 -2 -1  0  1  2  3  4]
+x/5:  [0.2 0.4 0.6 0.8 1.  1.2 1.4 1.6 1.8]
+x*5 [ 5 10 15 20 25 30 35 40 45]
+x^2:  [ 1  4  9 16 25 36 49 64 81]
+x%2:  [1 0 1 0 1 0 1 0 1]
+log(x):  [0.         0.69314718 1.09861229 1.38629436 1.60943791 1.79175947
+ 1.94591015 2.07944154 2.19722458]
+log2(x):  [0.         1.         1.5849625  2.         2.32192809 2.5849625
+ 2.80735492 3.         3.169925  ]
+log10(x):  [0.         0.30103    0.47712125 0.60205999 0.69897    0.77815125
+ 0.84509804 0.90308999 0.95424251]
+sin:  [ 0.84147098  0.90929743  0.14112001 -0.7568025  -0.95892427 -0.2794155
+  0.6569866   0.98935825  0.41211849]
+cos:  [ 0.54030231 -0.41614684 -0.9899925  -0.65364362  0.28366219  0.96017029
+  0.75390225 -0.14550003 -0.91113026]
+tan:  [ 1.55740772 -2.18503986 -0.14254654  1.15782128 -3.38051501 -0.29100619
+  0.87144798 -6.79971146 -0.45231566]
